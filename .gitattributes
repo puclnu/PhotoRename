@@ -1,0 +1,21 @@
+# Make GitHub language stats reflect actual Dart source.
+
+# Exclude build artifacts only (not platform code)
+build/** linguist-vendored
+**/build/** linguist-vendored
+
+# Exclude binary/assets so they don't skew percentages
+*.png linguist-vendored
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.heic linguist-vendored
+*.ico linguist-vendored
+*.icns linguist-vendored
+
+# Keep minimal web sources detectable; only icons are vendored
+web/icons/** linguist-vendored
+web/favicon.png linguist-vendored
+
+# Ensure main source directories remain detectable
+lib/** linguist-detectable=true
+test/** linguist-detectable=true
